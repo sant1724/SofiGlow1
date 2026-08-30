@@ -12,5 +12,5 @@
 // le permiten — que en este proyecto es SOLO LEER productos.
 // ============================================
 
-const SUPABASE_URL = "https://obysfntvygiunxiojfnm.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://obysfntvygiunxiojfnm.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ieXNmbnR2eWdpdW54aW9qZm5tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgwMzc4MDEsImV4cCI6MjEwMzYxMzgwMX0.u5eu0jjQGfmVo-1-UpDcyfs3PW8WTrlk9kMa-SYifGg";
