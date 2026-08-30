@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SofiGlow · Administración</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<!-- ============ LOGIN ============ -->
+<div class="admin-login-wrap" id="loginWrap">
+  <div class="admin-login-card">
+    <div class="logo" style="justify-content:center; margin-bottom: 6px;">
+      <span class="logo-sofi">Sofi</span><span class="logo-glow">Glow</span>
+    </div>
+    <p class="admin-subtitle">Panel de administración</p>
+    <form id="loginForm">
+      <label>
+        Correo
+        <input type="email" id="adminEmail" required autocomplete="username">
+      </label>
+      <label>
+        Contraseña
+        <input type="password" id="adminPassword" required autocomplete="current-password">
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+      <p class="admin-error" id="loginError" hidden></p>
+    </form>
+  </div>
+</div>
+
+<!-- ============ PANEL ============ -->
+<div class="admin-panel" id="adminPanel" hidden>
+  <header class="admin-header">
+    <div class="logo"><span class="logo-sofi">Sofi</span><span class="logo-glow">Glow</span></div>
+    <div class="admin-header-actions">
+      <span class="admin-user" id="adminUserEmail"></span>
+      <button class="btn btn-ghost" id="logoutBtn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="admin-content">
+    <h1>Editar precios</h1>
+    <p class="admin-lead">Cambia el precio y presiona "Guardar" en la fila. Los clientes ven el precio actualizado al instante.</p>
+
+    <input type="search" id="adminSearch" class="admin-search" placeholder="Buscar producto por nombre o SKU…">
+
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Producto</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="adminTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="load-more-wrap">
+      <button class="btn btn-outline" id="adminLoadMoreBtn">Cargar más</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
