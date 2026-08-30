@@ -19,8 +19,21 @@ const money = (n) => n == null
 
 // ---------- Load data ----------
 async function loadProducts() {
-  const res = await fetch("data/products.json");
-  ALL_PRODUCTS = await res.json();
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/products?select=*&order=category&_=${Date.now()}`, {
+      cache: "no-store",
+      headers: {
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+    });
+    if (!res.ok) throw new Error("No se pudo conectar a la base de datos");
+    ALL_PRODUCTS = await res.json();
+  } catch (err) {
+    console.error("Error cargando productos desde Supabase, usando respaldo local:", err);
+    const res = await fetch("data/products.json");
+    ALL_PRODUCTS = await res.json();
+  }
   buildCategoryChips();
   applyFilters();
 }
