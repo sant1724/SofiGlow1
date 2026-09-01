@@ -230,7 +230,7 @@ function goToPay() {
   document.getElementById("stepPay").hidden = false;
 
   const items = Object.values(cart);
-  let msg = "¡Hola SofiGlow! Ya realicé el pago de mi pedido:%0A%0A";
+  let msg = "¡Hola SoffGlam! Ya realicé el pago de mi pedido:%0A%0A";
   items.forEach(({ product, qty }) => {
     msg += `• ${qty} x ${product.name} — ${money(product.price * qty)}%0A`;
   });
