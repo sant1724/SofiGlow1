@@ -2,7 +2,7 @@
 // Soff Glam — App logic
 // ============================================
 
-const WHATSAPP_NUMBER = "573148928167"; // Colombia country code + number
+const WHATSAPP_NUMBER = "573008196612"; // Colombia country code + number
 
 let ALL_PRODUCTS = [];
 let filteredProducts = [];
@@ -23,7 +23,7 @@ function whatsappLinkFor(product) {
 // ---------- Load data ----------
 async function loadProducts() {
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/products?select=*&order=category&_=${Date.now()}`, {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/products?select=*&order=category`, {
       cache: "no-store",
       headers: {
         apikey: SUPABASE_ANON_KEY,
