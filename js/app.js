@@ -2,7 +2,7 @@
 // Soff Glam — App logic
 // ============================================
 
-const WHATSAPP_NUMBER = "573008196612"; // Colombia country code + number
+const WHATSAPP_NUMBER = "573148928167"; // Colombia country code + number
 
 let ALL_PRODUCTS = [];
 let filteredProducts = [];
